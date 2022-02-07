@@ -1,6 +1,6 @@
 {
   "name": "@quajs/get-func-exports",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Get function exports from JavaScript text",
   "main": "dist/get-func-exports.umd.js",
   "module": "dist/get-func-exports.esm.js",
