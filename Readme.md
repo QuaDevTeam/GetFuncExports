@@ -1,6 +1,6 @@
 # @quajs/get-func-exports
 
-Extracting function definitions from JavaScript text and converting them to exports.
+Extract function definitions from JavaScript text and convert them to exports.
 
 ## Usage
 
