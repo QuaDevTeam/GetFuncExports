@@ -1,0 +1,8 @@
+.prettierrc.js
+.eslintrc.js
+.editorconfig
+rollup.config.ts
+tsconfig.json
+.vscode
+.history
+src
