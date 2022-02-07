@@ -5,7 +5,7 @@ const namedFuncTester = /^function(\s+)?(\S+)(\s+)?\(/i;
 const arrowFuncTester = /^(const|let)(\s+)?(\S+)(\s+)?=(\s+)?([\s\S]+)(\s+)?=>(\s+)?{/gi;
 const arrowFuncNameExtractor = /^(const|let)(\s+?)(\S+)(\s+)?=/;
 
-const getFunctionExports = (text: string) => {
+export const getTransformedScript = (text: string) => {
   const formatted = prettier.format(text, prettierConfig);
   const lines = formatted.split('\n');
   const transformed = lines.map((line) => {
@@ -18,7 +18,7 @@ const getFunctionExports = (text: string) => {
     }
     return line;
   });
-  const wrappedText = `
+  return `
   const exported = Object.create(null);
   with (exported) {
     ${transformed.join('\n')}
@@ -26,9 +26,12 @@ const getFunctionExports = (text: string) => {
 
   return exported;
   `.trim();
+};
+
+const getExported = (text: string) => {
   // eslint-disable-next-line no-new-func
-  const exported = new Function(wrappedText)() as Record<string, Function>;
+  const exported = new Function(getTransformedScript(text))() as Record<string, Function>;
   return exported;
 };
 
-export default getFunctionExports;
+export default getExported;
