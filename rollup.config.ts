@@ -16,6 +16,7 @@ export default {
       globals: {
         prettier: 'prettier',
       },
+      exports: 'named',
     },
     { file: pkg.module, format: 'es', sourcemap: true },
   ],

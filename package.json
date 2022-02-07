@@ -4,7 +4,7 @@
   "description": "Get function exports from JavaScript text",
   "main": "dist/get-func-exports.umd.js",
   "module": "dist/get-func-exports.esm.js",
-  "typings": "dist/types/index.d.ts",
+  "typings": "dist/types/main.d.ts",
   "keywords": [
     "tool",
     "lib"
